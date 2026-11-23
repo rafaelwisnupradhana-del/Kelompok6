@@ -1,0 +1,231 @@
+
+/* FRIENDSHIP SCRAPBOOK */
+
+.scrapbook {
+    margin: 90px 0;
+}
+
+.timeline {
+    max-width: 750px;
+    margin: auto;
+    position: relative;
+    padding: 15px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(#d6a05d,#f5e5cd,#a96b3d);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px 35px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 50%;
+}
+
+.timeline-item:nth-child(even) {
+    text-align: right;
+}
+
+.timeline-content {
+    background: rgba(255,250,239,.85);
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(105,68,34,.12);
+    transition: .4s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-7px);
+}
+
+.timeline-content h3 {
+    font-family: 'Playfair Display',serif;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    color: #876448;
+    line-height: 1.8;
+}
+
+.timeline-item::after {
+    content: "♡";
+    position: absolute;
+    top: 28px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff8e9;
+    color: #b77b42;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 3px 12px #c99c65;
+}
+
+.timeline-item:nth-child(odd)::after {
+    left: -15px;
+}
+
+/* FUN FACTS */
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.fact-card {
+    background: rgba(255,250,239,.8);
+    border: 1px solid white;
+    border-radius: 22px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: .4s;
+}
+
+.fact-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+}
+
+.fact-card .emoji {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.fact-card h3 {
+    font-family: 'Playfair Display',serif;
+    margin-bottom: 10px;
+}
+
+.fact-card p {
+    font-size: 13px;
+    color: #876448;
+    line-height: 1.7;
+}
+
+/* QUOTE */
+
+.quote-box {
+    max-width: 850px;
+    margin: 70px auto;
+    padding: 55px 30px;
+    text-align: center;
+    border-radius: 30px;
+    background: linear-gradient(135deg,rgba(255,250,239,.9),rgba(245,222,184,.85));
+    border: 1px solid white;
+    box-shadow: 0 15px 40px rgba(105,68,34,.12);
+}
+
+.quote-box .quote-symbol {
+    font-family: Georgia,serif;
+    font-size: 70px;
+    color: #d6a05d;
+    line-height: 1;
+}
+
+.quote-box h2 {
+    font-family: 'Playfair Display',serif;
+    font-size: clamp(24px,4vw,38px);
+    margin: 15px 0;
+}
+
+.quote-box p {
+    color: #967253;
+    font-size: 13px;
+}
+
+/* RANDOM MEMORY */
+
+.random-box {
+    text-align: center;
+    background: rgba(255,250,239,.75);
+    border: 1px dashed #c99c65;
+    border-radius: 25px;
+    padding: 35px 20px;
+    margin: 50px auto;
+    max-width: 750px;
+}
+
+.random-box h3 {
+    font-family: 'Playfair Display',serif;
+    font-size: 25px;
+}
+
+.random-box p {
+    color: #876448;
+    font-size: 14px;
+    margin: 15px 0;
+    min-height: 40px;
+    line-height: 1.8;
+}
+
+.random-box button {
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    background: linear-gradient(135deg,#d6a05d,#a96b3d);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.random-box button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 20px #d6a05d;
+}
+
+/* STICKERS */
+
+.sticker {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #fff8e9;
+    border: 1px solid white;
+    border-radius: 12px;
+    color: #a16c40;
+    box-shadow: 0 5px 15px rgba(105,68,34,.1);
+    transform: rotate(-4deg);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sticker:nth-child(even) {
+    transform: rotate(4deg);
+}
+
+@media(max-width:650px) {
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px 10px 15px 40px;
+        text-align: left;
+    }
+
+    .timeline-item::after,
+    .timeline-item:nth-child(odd)::after {
+        left: -5px;
+        right: auto;
+    }
+}
